@@ -2,14 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Free Website</title>
+  <title>World of Animation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    h1 { color: #4CAF50; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #4CAF50;
+    }
+
+    .tool-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .tool-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .tool-card:hover {
+      transform: scale(1.03);
+    }
+
+    .example-video {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Free Website</h1>
-  <p>This site is hosted for free using GitHub Pages.</p>
+
+  <header>
+    <h1>🎬 World of Animation</h1>
+    <p>Explore the tools, techniques, and real-world impact of animation</p>
+  </header>
+
+  <nav>
+    <a href="#tools">Tools</a>
+    <a href="#examples">Examples</a>
+    <a href="#cinema">Cinema</a>
+    <a href="#interactive">Try It!</a>
+  </nav>
+
+  <section id="tools">
+    <h2>🛠️ Popular Animation Tools</h2>
+    <div class="tool-list">
+      <div class="tool-card">
+        <h3>Adobe After Effects</h3>
+        <p>Industry standard for motion graphics and visual effects.</p>
+      </div>
+      <div class="tool-card">
+        <h3>Blender</h3>
+        <p>Free, open-source tool for 3D animation, modeling, and compositing.</p>
+      </div>
+      <div class="tool-card">
+        <h3>Toon Boom Harmony</h3>
+        <p>Powerful for 2D animation used in many professional studios.</p>
+      </div>
+      <div class="tool-card">
+        <h3>Autodesk Maya</h3>
+        <p>Used for 3D character animation and simulation in movies and games.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="examples">
+    <h2>🎨 Stunning Animation Examples</h2>
+    <p>Check out animations created with various tools.</p>
+    <iframe class="example-video" src="https://www.youtube.com/embed/7yNxZIEQ-mM" 
+        title="Example Animation Reel" allowfullscreen></iframe>
+  </section>
+
+  <section id="cinema">
+    <h2>🎥 Animation in Real-World Cinema</h2>
+    <p>Animation is used extensively in films to enhance storytelling, create fictional worlds, and bring characters to life. Some popular examples:</p>
+    <ul>
+      <li><strong>Avatar (2009):</strong> Used advanced motion capture and 3D animation to build Pandora.</li>
+      <li><strong>The Lion King (2019):</strong> A fully animated film made to look photo-realistic.</li>
+      <li><strong>Spider-Man: Into the Spider-Verse:</strong> Used stylized animation to mimic comic books.</li>
+    </ul>
+  </section>
+
+  <section id="interactive">
+    <h2>🧪 Try It Yourself!</h2>
+    <p>Click the button below to animate an element using simple JavaScript:</p>
+    <button onclick="runAnimation()">Animate Me</button>
+    <div id="box" style="width:50px;height:50px;background-color:#4CAF50;margin-top:20px;border-radius:10px;"></div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Animation Enthusiast. Powered by HTML, CSS & JS.</p>
+  </footer>
+
+  <script>
+    function runAnimation() {
+      const box = document.getElementById("box");
+      box.style.transition = "transform 1s ease-in-out";
+      box.style.transform = "translateX(300px)";
+      setTimeout(() => {
+        box.style.transform = "translateX(0)";
+      }, 1000);
+    }
+  </script>
+
 </body>
 </html>
